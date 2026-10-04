@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RailBook – Railway Booking System</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="bar">
+  <div class="logo">🚆 Rail<span>Book</span></div>
+  <div class="user hidden" id="userbox"><span id="who"></span><button class="ghost" id="logout">Log out</button></div>
+</div></header>
+
+<main>
+<!-- AUTH -->
+<section id="auth" class="card auth">
+  <h1 id="authTitle">Welcome back</h1>
+  <p class="sub" id="authSub">Log in to book and manage your train tickets.</p>
+  <label for="u">Username</label><input id="u" autocomplete="username" maxlength="30">
+  <label for="p">Password</label><input id="p" type="password" autocomplete="current-password">
+  <div id="confWrap" class="hidden"><label for="p2">Confirm password</label><input id="p2" type="password" autocomplete="new-password"></div>
+  <button class="full" id="authBtn">Log in</button>
+  <div class="msg" id="authMsg" role="alert"></div>
+  <div class="switch"><span id="switchTxt">New here?</span> <a id="switchLink">Create an account</a></div>
+</section>
+
+<!-- APP -->
+<section id="app" class="hidden">
+  <div class="layout">
+    <div class="card">
+      <h2>Book a ticket</h2>
+      <label for="name">Passenger name</label><input id="name" maxlength="40">
+      <div class="grid">
+        <div><label for="from">From</label><select id="from"></select></div>
+        <div><label for="to">To</label><select id="to"></select></div>
+        <div><label for="date">Journey date</label><input id="date" type="date"></div>
+        <div><label for="seats">Passengers</label><select id="seats"></select></div>
+      </div>
+      <label for="cls">Class</label><select id="cls"></select>
+      <div class="meta" id="fare" style="margin-top:14px">Estimated fare: –</div>
+      <button class="full" id="book">Confirm booking</button>
+      <div class="msg" id="bookMsg" role="alert"></div>
+    </div>
+    <div>
+      <h2>My bookings</h2>
+      <div id="list"></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>Demo project · Data is stored only in your browser</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
